@@ -23,14 +23,13 @@ class App extends Component {
       ContactsAPI.remove(contact)
   }
 
-  createContact(contact){
-//    console.log(contact);
+  createContact = (contact) => {
+    console.log(contact);
     ContactsAPI.create(contact).then(contact => {
       this.setState(state => ({
         contacts: state.contacts.concat([ contact ])
       }))
     })
-  //  console.log(this.state.contacts);
   }
 
   render() {
